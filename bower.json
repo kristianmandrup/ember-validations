@@ -1,0 +1,9 @@
+{
+  "name": "ember-validations",
+  "version": "0.0.1",
+  "description": "Form validations for Ember CLI apps",
+  "license": "MIT",
+  "main": [
+    "distributions/ember-validations.js"
+  ]
+}
