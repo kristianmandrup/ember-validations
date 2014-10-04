@@ -6,10 +6,11 @@
 
 
 (function() {
-Ember.Validations = Ember.Namespace.create({
-  VERSION: '1.0.0'
-});
+  console.log('Ember.Validations 1.0.0 is loaded')
 
+  Ember.Validations = Ember.Namespace.create({
+    VERSION: '1.0.0'
+  });
 })();
 
 
