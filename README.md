@@ -6,7 +6,7 @@ Can be used with [ember-easyform-cli](https://github.com/kristianmandrup/ember-e
 
 The distribution: 
 
-`dist/ember-validations.js` - *Browserified* distribution from [dockyard](https://github.com/dockyard/ember-validations) repo.
+`dist/ember-validations.js` - *Browserified* distribution of [dockyard](https://github.com/dockyard/ember-validations) repo.
 
 ## Installation for browser via Bower
 
@@ -26,24 +26,6 @@ Run `bower install`
 You can now reference it directly from a HTML file via a `<script>` tag 
 
 `<script src="bower_components/ember-validations/dist/ember-validations.js">`
-
-## For Ember CLI
-
-In your Ember CLI app `packages.json` file, add: 
-
-```json
-  "ember-validations-cli": "git://github.com/kristianmandrup/ember-validations-cli.git#master"
-```
-
-Run `npm install`
-
-Now test that it works:
-
-Run `ember serve`
-
-This should make Broccoli build the project, pick up the addon *ember-validations-cli* in the `node_modules/` folder by the keyword
- `ember-addon`. Load the main addon file `index.js` which adss an `app.import` to the Broccoli build process to pick up the 
- bower component installed in the bower directory of the app, see [ember-validations-cli](git://github.com/kristianmandrup/ember-validations-cli.git)
 
 ## Looking for help? ##
 
