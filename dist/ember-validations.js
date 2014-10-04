@@ -517,7 +517,7 @@ Ember.Validations.validators.local.Format = Ember.Validations.validators.LocalVa
     } else if (this.options['with'] && !this.options['with'].test(this.model.get(this.property))) {
       this.errors.pushObject(this.options.message);
     } else if (this.options['regex'] && !Ember.isEmpty(this.model.get(this.options[regex]))) {
-      if !this.options['regex'].test(this.model.get(this.property)) {
+      if (!this.options['regex'].test(this.model.get(this.property))) {
         this.errors.pushObject(this.options.message);
       }
     } else if (this.options.without && this.options.without.test(this.model.get(this.property))) {
