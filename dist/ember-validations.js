@@ -6,7 +6,7 @@
 
 
 (function() {
-  console.log('Ember.Validations 1.0.0 is loaded')
+  console.log('Ember.Validations 1.0.0 is loaded');
 
   Ember.Validations = Ember.Namespace.create({
     VERSION: '1.0.0'
@@ -373,6 +373,22 @@ Ember.Validations.validators.Base = Ember.Object.extend({
 
 })();
 
+// Must come before other validators which extend it but after Base
+(function() {
+Ember.Validations.validators.LocalValidator = Ember.Validations.validators.Base.extend({
+  _validate: function() {
+    this.errors.clear();
+    if (this.canValidate()) {
+      this.call();
+    }
+    if (this.get('isValid')) {
+      return Ember.RSVP.resolve(true);
+    } else {
+      return Ember.RSVP.resolve(false);
+    }
+  }.on('init')
+});
+})();
 
 
 (function() {
@@ -870,25 +886,6 @@ Ember.Validations.validators.local.Url = Ember.Validations.validators.LocalValid
 
 
 })();
-
-
-
-(function() {
-Ember.Validations.validators.LocalValidator = Ember.Validations.validators.Base.extend({
-  _validate: function() {
-    this.errors.clear();
-    if (this.canValidate()) {
-      this.call();
-    }
-    if (this.get('isValid')) {
-      return Ember.RSVP.resolve(true);
-    } else {
-      return Ember.RSVP.resolve(false);
-    }
-  }.on('init')
-});
-})();
-
 
 
 (function() {
